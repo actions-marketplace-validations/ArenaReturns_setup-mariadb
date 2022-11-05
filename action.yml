@@ -1,7 +1,8 @@
 name: Setup MariaDB
 description: ArenaReturns' fork of the missing action for MariaDB
-icon: arrow-down-circle
-color: blue
+branding:
+  icon: database
+  color: blue
 inputs:
   mariadb-version:
     description: The MariaDB version to download (if necessary) and use
