@@ -30,8 +30,6 @@ jobs:
           - os: ubuntu-18.04
             mariadb-version: 10.3
           - os: macos-12
-            mariadb-version: 10.9
-          - os: macos-12
             mariadb-version: 10.8
           - os: macos-12
             mariadb-version: 10.7
@@ -44,8 +42,6 @@ jobs:
           - os: macos-12
             mariadb-version: 10.3
           - os: macos-11
-            mariadb-version: 10.9
-          - os: macos-11
             mariadb-version: 10.8
           - os: macos-11
             mariadb-version: 10.7
@@ -57,8 +53,6 @@ jobs:
             mariadb-version: 10.4
           - os: macos-11
             mariadb-version: 10.3
-          - os: macos-10.15
-            mariadb-version: 10.9
           - os: macos-10.15
             mariadb-version: 10.8
           - os: macos-10.15
