@@ -1,6 +1,6 @@
-# setup-mariadb
-
 ### This is a fork of ankane's setup-mariadb action tweaked for our needs.
+
+# setup-mariadb
 
 The missing action for MariaDB :tada:
 
