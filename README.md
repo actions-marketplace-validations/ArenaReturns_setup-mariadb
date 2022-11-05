@@ -15,7 +15,7 @@ The missing action for MariaDB :tada:
 Add it as a step to your workflow
 
 ```yml
-- uses: arenareturns/setup-mariadb@v1
+- uses: arenareturns/setup-mariadb@v1.0.1
 ```
 
 ## Versions
@@ -23,7 +23,7 @@ Add it as a step to your workflow
 Specify a version (defaults to the latest)
 
 ```yml
-- uses: arenareturns/setup-mariadb@v1
+- uses: arenareturns/setup-mariadb@v1.0.1
   with:
     mariadb-version: 10.9
 ```
@@ -48,7 +48,7 @@ strategy:
   matrix:
     mariadb-version: [10.9, 10.8, 10.7, 10.6, 10.5, 10.4, 10.3]
 steps:
-  - uses: arenareturns/setup-mariadb@v1
+  - uses: arenareturns/setup-mariadb@v1.0.1
     with:
       mariadb-version: ${{ matrix.mariadb-version }}
 ```
@@ -58,7 +58,7 @@ steps:
 Create a database
 
 ```yml
-- uses: arenareturns/setup-mariadb@v1
+- uses: arenareturns/setup-mariadb@v1.0.1
   with:
     database: testdb
 ```
