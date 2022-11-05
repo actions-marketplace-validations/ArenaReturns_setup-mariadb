@@ -8,6 +8,8 @@ jobs:
       matrix:
         include:
           - os: ubuntu-20.04
+            mariadb-version: 10.9
+          - os: ubuntu-20.04
             mariadb-version: 10.8
           - os: ubuntu-20.04
             mariadb-version: 10.7
@@ -28,6 +30,8 @@ jobs:
           - os: ubuntu-18.04
             mariadb-version: 10.3
           - os: macos-12
+            mariadb-version: 10.9
+          - os: macos-12
             mariadb-version: 10.8
           - os: macos-12
             mariadb-version: 10.7
@@ -40,6 +44,8 @@ jobs:
           - os: macos-12
             mariadb-version: 10.3
           - os: macos-11
+            mariadb-version: 10.9
+          - os: macos-11
             mariadb-version: 10.8
           - os: macos-11
             mariadb-version: 10.7
@@ -52,6 +58,8 @@ jobs:
           - os: macos-11
             mariadb-version: 10.3
           - os: macos-10.15
+            mariadb-version: 10.9
+          - os: macos-10.15
             mariadb-version: 10.8
           - os: macos-10.15
             mariadb-version: 10.7
@@ -64,6 +72,8 @@ jobs:
           - os: macos-10.15
             mariadb-version: 10.3
           - os: windows-2022
+            mariadb-version: 10.9
+          - os: windows-2022
             mariadb-version: 10.8
           - os: windows-2022
             mariadb-version: 10.7
@@ -75,6 +85,8 @@ jobs:
             mariadb-version: 10.4
           - os: windows-2022
             mariadb-version: 10.3
+          - os: windows-2019
+            mariadb-version: 10.9
           - os: windows-2019
             mariadb-version: 10.8
           - os: windows-2019
@@ -88,15 +100,15 @@ jobs:
           - os: windows-2019
             mariadb-version: 10.3
     steps:
-    - uses: actions/checkout@v3
-    - uses: ./.
-      with:
-        mariadb-version: ${{ matrix.mariadb-version }}
-        database: testdb
-    - run: mysql --version
-    - run: mysql -e 'SELECT VERSION()'
-    - run: mysql -e 'SELECT CURRENT_USER()'
-    - run: mysql -e 'SELECT DATABASE()'
-    - run: mysql -e "SHOW VARIABLES LIKE 'socket'"
-    - run: mysqladmin create testdb2
-    - run: mysql -D testdb -e 'SELECT DATABASE()'
+      - uses: actions/checkout@v3
+      - uses: ./.
+        with:
+          mariadb-version: ${{ matrix.mariadb-version }}
+          database: testdb
+      - run: mysql --version
+      - run: mysql -e 'SELECT VERSION()'
+      - run: mysql -e 'SELECT CURRENT_USER()'
+      - run: mysql -e 'SELECT DATABASE()'
+      - run: mysql -e "SHOW VARIABLES LIKE 'socket'"
+      - run: mysqladmin create testdb2
+      - run: mysql -D testdb -e 'SELECT DATABASE()'

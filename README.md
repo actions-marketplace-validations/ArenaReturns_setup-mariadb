@@ -1,19 +1,21 @@
 # setup-mariadb
 
+### This is a fork of ankane's setup-mariadb action tweaked for our needs.
+
 The missing action for MariaDB :tada:
 
 - Simpler than containers
 - Works on Linux, Mac, and Windows
 - Supports different versions
 
-[![Build Status](https://github.com/ankane/setup-mariadb/workflows/build/badge.svg?branch=v1)](https://github.com/ankane/setup-mariadb/actions)
+[![Build Status](https://github.com/arenareturns/setup-mariadb/workflows/build/badge.svg?branch=v1)](https://github.com/arenareturns/setup-mariadb/actions)
 
 ## Getting Started
 
 Add it as a step to your workflow
 
 ```yml
-    - uses: ankane/setup-mariadb@v1
+- uses: arenareturns/setup-mariadb@v1
 ```
 
 ## Versions
@@ -21,34 +23,34 @@ Add it as a step to your workflow
 Specify a version (defaults to the latest)
 
 ```yml
-    - uses: ankane/setup-mariadb@v1
-      with:
-        mariadb-version: 10.8
+- uses: arenareturns/setup-mariadb@v1
+  with:
+    mariadb-version: 10.9
 ```
 
 Currently supports
 
-Version | `10.8` | `10.7` | `10.6` | `10.5` | `10.4` | `10.3`
---- | --- | --- | --- | --- | --- | ---
-`ubuntu-22.04` | | | | | |
-`ubuntu-20.04` | ✓ | ✓ | ✓ | ✓ | |
-`ubuntu-18.04` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
-`macos-12` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
-`macos-11` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
-`macos-10.15` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
-`windows-2022` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
-`windows-2019` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
+| Version        | `10.9` | `10.8` | `10.7` | `10.6` | `10.5` | `10.4` | `10.3` |
+| -------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| `ubuntu-22.04` | ?      | ?      | ?      | ?      | ?      | ?      | ?      |
+| `ubuntu-20.04` | ✓      | ✓      | ✓      | ✓      | ✓      | ?      | ?      |
+| `ubuntu-18.04` | ?      | ✓      | ✓      | ✓      | ✓      | ✓      | ✓      |
+| `macos-12`     | ?      | ✓      | ✓      | ✓      | ✓      | ✓      | ✓      |
+| `macos-11`     | ?      | ✓      | ✓      | ✓      | ✓      | ✓      | ✓      |
+| `macos-10.15`  | ?      | ✓      | ✓      | ✓      | ✓      | ✓      | ✓      |
+| `windows-2022` | ?      | ✓      | ✓      | ✓      | ✓      | ✓      | ✓      |
+| `windows-2019` | ?      | ✓      | ✓      | ✓      | ✓      | ✓      | ✓      |
 
 Test against multiple versions
 
 ```yml
-    strategy:
-      matrix:
-        mariadb-version: [10.8, 10.7, 10.6, 10.5, 10.4, 10.3]
-    steps:
-    - uses: ankane/setup-mariadb@v1
-      with:
-        mariadb-version: ${{ matrix.mariadb-version }}
+strategy:
+  matrix:
+    mariadb-version: [10.9, 10.8, 10.7, 10.6, 10.5, 10.4, 10.3]
+steps:
+  - uses: arenareturns/setup-mariadb@v1
+    with:
+      mariadb-version: ${{ matrix.mariadb-version }}
 ```
 
 ## Options
@@ -56,9 +58,9 @@ Test against multiple versions
 Create a database
 
 ```yml
-    - uses: ankane/setup-mariadb@v1
-      with:
-        database: testdb
+- uses: arenareturns/setup-mariadb@v1
+  with:
+    database: testdb
 ```
 
 ## Extra Steps
@@ -66,7 +68,7 @@ Create a database
 Run queries
 
 ```yml
-    - run: mysql -D testdb -e 'SELECT VERSION()'
+- run: mysql -D testdb -e 'SELECT VERSION()'
 ```
 
 ## Related Actions
@@ -82,7 +84,7 @@ Run queries
 
 Everyone is encouraged to help improve this project. Here are a few ways you can help:
 
-- [Report bugs](https://github.com/ankane/setup-mariadb/issues)
-- Fix bugs and [submit pull requests](https://github.com/ankane/setup-mariadb/pulls)
+- [Report bugs](https://github.com/arenareturns/setup-mariadb/issues)
+- Fix bugs and [submit pull requests](https://github.com/arenareturns/setup-mariadb/pulls)
 - Write, clarify, or fix documentation
 - Suggest or add new features
